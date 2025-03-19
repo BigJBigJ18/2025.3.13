@@ -29,12 +29,11 @@ public class CharArray {
         for(int i=0; i<anz; i++){
             if(satz[i]==c){
                 entfernte++;
-                satz[i]=' ';
                 for(int j=i; j<anz; j++){
                     if(!(j+1>=anz)){
                         satz[j]=satz[j+1];
                     }else{
-                        satz[j]=' ';
+                        satz[j]='▓';
                     }
                 }
                 i--;
@@ -59,7 +58,7 @@ public class CharArray {
     }
     public boolean istIdentMit(char[] satz){
         boolean check = true;
-        if(this.anz == anz){
+        if(anz == satz.length){
             for(int i=0; i<anz; i++){
                 if(this.satz[i]!=satz[i]){
                     check=false;
@@ -74,11 +73,11 @@ public class CharArray {
     public String istTeilVon(char[] satzteil){
         boolean enthalten=false;
         StringBuilder stringSatz=new StringBuilder("\"");
+
         for(char c:satzteil){
             stringSatz.append(c);
         }
         stringSatz.append("\"");
-
         for(int i=0; i<anz; i++){
             if(satzteil[0]==satz[i]){
                 for(int j=0; j<satzteil.length; j++){
@@ -103,7 +102,6 @@ public class CharArray {
         return stringSatz.toString();
     }
     public int ersterIndexVon(char c){
-        int position=0;
         for(int i=0; i<anz-1; i++){
             if(satz[i]==c){
                 System.out.println("Von 1 gezählt befindet sich der Character \""+c+"\" an der Position "+(i+1));
@@ -126,7 +124,7 @@ public class CharArray {
     public int letzterIndexVon(char c){
         for(int i=anz; i>0; i--){
             if(satz[i-1]==c){
-                return i;
+                return i-1;
             }
         }
         System.out.println("Es gibt dieses Character nicht im Array!");
