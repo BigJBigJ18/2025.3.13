@@ -123,18 +123,13 @@ public class CharArray {
         return -1;
     }
     public int letzterIndexVon(char c){
-        int position=-1;
-        for(int i=0; i<satz.length; i++){
+        for(int i=satz.length; i>0; i--){
             if(satz[i]==c){
-                position=i;
+                return i;
             }
         }
-        if(position==-1){
-            System.out.println("Es gibt dieses Character nicht im Array!");
-        }else{
-            System.out.println("Die letzte Position der Characters \""+c+"\" ist an der Position "+position);
-        }
-        return position;
+        System.out.println("Es gibt dieses Character nicht im Array!");
+        return -1;
     }
     public void sort(){
         for(int j=0; j<satz.length; j++){

@@ -13,8 +13,8 @@ public class Main {
 //        charArray.reverseZeile();
 //        System.out.println();
 //        System.out.println(charArray.istIdentMit(array));
-        System.out.println(charArray.istTeilVon(test));
-//        charArray.letzterIndexVon('l');
+//        System.out.println(charArray.istTeilVon(test));
+        charArray.letzterIndexVon('l');
 //        charArray.sort();
         charArray.ausgeben();
 
