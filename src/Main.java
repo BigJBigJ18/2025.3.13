@@ -10,11 +10,11 @@ public class Main {
 //        charArray.entferneZeichen('l');
 //        charArray.ausgeben();
 //        System.out.println();
-//        charArray.reverseZeile();
+        charArray.reverseZeile();
 //        System.out.println();
 //        System.out.println(charArray.istIdentMit(array));
 //        System.out.println(charArray.istTeilVon(test));
-        charArray.letzterIndexVon('l');
+//        charArray.letzterIndexVon('l');
 //        charArray.sort();
         charArray.ausgeben();
 
