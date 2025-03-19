@@ -51,11 +51,11 @@ public class CharArray {
         }
     }
     public void reverseZeile(){
-        char[] tausch=new char[anz];
-        for(int i=anz-1; i>=0; i--){
-            tausch[anz-i-1]=satz[i];
+        for(int i=0; i<anz/2; i++){
+            char tausch=satz[i];
+            satz[i]=satz[anz-i-1];
+            satz[anz-i-1]=tausch;
         }
-        satz=tausch;
     }
     public boolean istIdentMit(char[] satz){
         boolean check = true;
