@@ -80,6 +80,9 @@ public class CharArray {
         stringSatz.append("\"");
         for(int i=0; i<anz; i++){
             if(satzteil[0]==satz[i]){
+                if(anz-satzteil.length<0){
+                    System.err.println("wrong.charArray.istIdentMit.input.outOfBounds");
+                }
                 for(int j=0; j<satzteil.length; j++){
                     if(satzteil[j]!=satz[i+j]){
                         enthalten=false;
