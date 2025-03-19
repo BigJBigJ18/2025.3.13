@@ -2,23 +2,23 @@ public class CharArray {
     private char[] satz;
     private int anz;
 
-    public CharArray(char satz[]) {
+    public CharArray(char[] satz) {
         setSatz(satz);
         setAnz();
     }
 
-    public char[] getSatz() {
-        return satz;
-    }
+//    public char[] getSatz() {
+//        return satz;
+//    }
     public void setSatz(char[] satz) {
         if(satz.length ==0) {
             satz= new char[]{'a', 'b', 'c'};
         }
         this.satz = satz;
     }
-    public int getAnz() {
-        return anz;
-    }
+//    public int getAnz() {
+//        return anz;
+//    }
     public void setAnz() {
         this.anz = satz.length;
     }
@@ -31,7 +31,7 @@ public class CharArray {
                 entfernte++;
                 satz[i]=' ';
                 for(int j=i; j<satz.length; j++){
-                    if(!(j+1>=satz.length)){
+                    if(!(j+1>=anz)){
                         satz[j]=satz[j+1];
                     }else{
                         satz[j]=' ';
@@ -41,14 +41,12 @@ public class CharArray {
             }
         }
         char[] fix=new char[satz.length-entfernte];
-        for(int i=0; i<fix.length; i++){
-            fix[i]=satz[i];
-        }
+        System.arraycopy(satz, 0, fix, 0, fix.length);
         satz=fix;
     }
     public void ausgeben(){
-        for(int i=0; i<satz.length; i++){
-            System.out.print(satz[i]);
+        for (char c : satz) {
+            System.out.print(c);
         }
     }
     public void reverseZeile(){
@@ -75,8 +73,8 @@ public class CharArray {
     public String istTeilVon(char[] satzteil){
         boolean enthalten=false;
         StringBuilder stringSatz=new StringBuilder("\"");
-        for(int i=0; i<satzteil.length; i++){
-            stringSatz.append(satzteil[i]);
+        for(char c:satzteil){
+            stringSatz.append(c);
         }
         stringSatz.append("\"");
 
@@ -97,8 +95,8 @@ public class CharArray {
         }else{
             stringSatz.append(" ist nicht in \"");
         }
-        for(int i=0; i<satz.length; i++){
-            stringSatz.append(satz[i]);
+        for(char c:satz){
+            stringSatz.append(c);
         }
         stringSatz.append("\" enthalten.");
         return stringSatz.toString();
@@ -134,7 +132,7 @@ public class CharArray {
         if(position==-1){
             System.out.println("Es gibt dieses Character nicht im Array!");
         }else{
-            System.out.println("Die letze Position der Characters \""+c+"\" ist an der Position "+position);
+            System.out.println("Die letzte Position der Characters \""+c+"\" ist an der Position "+position);
         }
         return position;
     }
