@@ -7,18 +7,18 @@ public class CharArray {
         setAnz();
     }
 
-//    public char[] getSatz() {
-//        return satz;
-//    }
+    public char[] getSatz() {
+        return satz;
+    }
     public void setSatz(char[] satz) {
         if(satz.length ==0) {
             satz= new char[]{'a', 'b', 'c'};
         }
         this.satz = satz;
     }
-//    public int getAnz() {
-//        return anz;
-//    }
+    public int getAnz() {
+        return anz;
+    }
     public void setAnz() {
         this.anz = satz.length;
     }
