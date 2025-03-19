@@ -11,7 +11,7 @@ public class CharArray {
         return satz;
     }
     public void setSatz(char[] satz) {
-        if(satz.length ==0) {
+        if(anz ==0) {
             satz= new char[]{'a', 'b', 'c'};
         }
         this.satz = satz;
@@ -26,11 +26,11 @@ public class CharArray {
     public void entferneZeichen(char c){
         int entfernte =0;
 
-        for(int i=0; i<satz.length; i++){
+        for(int i=0; i<anz; i++){
             if(satz[i]==c){
                 entfernte++;
                 satz[i]=' ';
-                for(int j=i; j<satz.length; j++){
+                for(int j=i; j<anz; j++){
                     if(!(j+1>=anz)){
                         satz[j]=satz[j+1];
                     }else{
@@ -40,9 +40,10 @@ public class CharArray {
                 i--;
             }
         }
-        char[] fix=new char[satz.length-entfernte];
+        char[] fix=new char[anz-entfernte];
         System.arraycopy(satz, 0, fix, 0, fix.length);
         satz=fix;
+        setAnz();
     }
     public void ausgeben(){
         for (char c : satz) {
@@ -50,16 +51,16 @@ public class CharArray {
         }
     }
     public void reverseZeile(){
-        char[] tausch=new char[satz.length];
-        for(int i=satz.length-1; i>=0; i--){
-            tausch[satz.length-i-1]=satz[i];
+        char[] tausch=new char[anz];
+        for(int i=anz-1; i>=0; i--){
+            tausch[anz-i-1]=satz[i];
         }
         satz=tausch;
     }
     public boolean istIdentMit(char[] satz){
         boolean check = true;
-        if(this.satz.length == satz.length){
-            for(int i=0; i<satz.length; i++){
+        if(this.anz == anz){
+            for(int i=0; i<anz; i++){
                 if(this.satz[i]!=satz[i]){
                     check=false;
                     break;
@@ -78,7 +79,7 @@ public class CharArray {
         }
         stringSatz.append("\"");
 
-        for(int i=0; i<satz.length; i++){
+        for(int i=0; i<anz; i++){
             if(satzteil[0]==satz[i]){
                 for(int j=0; j<satzteil.length; j++){
                     if(satzteil[j]!=satz[i+j]){
@@ -103,7 +104,7 @@ public class CharArray {
     }
     public int ersterIndexVon(char c){
         int position=0;
-        for(int i=0; i<satz.length-1; i++){
+        for(int i=0; i<anz-1; i++){
             if(satz[i]==c){
                 System.out.println("Von 1 gezählt befindet sich der Character \""+c+"\" an der Position "+(i+1));
                 return i;
@@ -113,7 +114,7 @@ public class CharArray {
         return -1;
     }
     public int ersterIndexVon(char c, int abIndex){
-        for(int i=abIndex; i<satz.length; i++){
+        for(int i=abIndex; i<anz; i++){
             if(satz[i]==c){
                 System.out.println("Ab der Stelle "+abIndex+" ist an der Stelle "+i+" der Character \""+c+"\"");
                 return i;
@@ -123,7 +124,7 @@ public class CharArray {
         return -1;
     }
     public int letzterIndexVon(char c){
-        for(int i=satz.length; i>0; i--){
+        for(int i=anz; i>0; i--){
             if(satz[i]==c){
                 return i;
             }
@@ -132,7 +133,7 @@ public class CharArray {
         return -1;
     }
     public void sort(){
-        for(int j=0; j<satz.length; j++){
+        for(int j=0; j<anz; j++){
             int posGross=0;
             char charGross=satz[0];
             for(int i=0; i<anz; i++){
