@@ -24,11 +24,11 @@ public class CharArray {
     }
 
     public void entferneZeichen(char c){
-        int laenge=satz.length;
+        int entfernte =0;
 
         for(int i=0; i<satz.length; i++){
             if(satz[i]==c){
-                laenge=i;
+                entfernte++;
                 satz[i]=' ';
                 for(int j=i; j<satz.length; j++){
                     if(!(j+1>=satz.length)){
@@ -40,7 +40,7 @@ public class CharArray {
                 i--;
             }
         }
-        char[] fix=new char[laenge];
+        char[] fix=new char[satz.length-entfernte];
         for(int i=0; i<fix.length; i++){
             fix[i]=satz[i];
         }
