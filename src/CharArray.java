@@ -52,8 +52,8 @@ public class CharArray {
     }
     public void reverseZeile(){
         char[] tausch=new char[anz];
-        for(int i=anz; i>0; i--){
-            tausch[anz-i]=satz[i];
+        for(int i=anz-1; i>=0; i--){
+            tausch[anz-i-1]=satz[i];
         }
         satz=tausch;
     }
