@@ -11,7 +11,7 @@ public class CharArray {
         return satz;
     }
     public void setSatz(char[] satz) {
-        if(anz ==0) {
+        if(satz.length ==0) {
             satz= new char[]{'a', 'b', 'c'};
         }
         this.satz = satz;
@@ -125,7 +125,7 @@ public class CharArray {
     }
     public int letzterIndexVon(char c){
         for(int i=anz; i>0; i--){
-            if(satz[i]==c){
+            if(satz[i-1]==c){
                 return i;
             }
         }
